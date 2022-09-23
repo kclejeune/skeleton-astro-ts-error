@@ -1,0 +1,33 @@
+---
+import "@brainandbones/skeleton/themes/theme-skeleton.css";
+import "@brainandbones/skeleton/styles/all.css";
+
+import { AppBar, AppShell, LightSwitch } from "@brainandbones/skeleton";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>App</title>
+  </head>
+  <body>
+    <AppShell>
+      <svelte:fragment slot="header">
+        <AppBar>
+          <svelte:fragment slot="lead">App</svelte:fragment>
+          <LightSwitch client:load slot="trail" />
+        </AppBar>
+      </svelte:fragment>
+      <!-- ... -->
+      <slot />
+    </AppShell>
+    <style is:global>
+      html,
+      body {
+        @apply h-full overflow-hidden;
+      }
+    </style>
+  </body>
+</html>
